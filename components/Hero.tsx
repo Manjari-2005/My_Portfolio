@@ -53,6 +53,28 @@ export default function Hero() {
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 md:grid-cols-[1.1fr_0.9fr]">
         <div>
+          {/* Circular avatar + greeting — visible on ALL screen sizes (mobile + desktop) */}
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-6 flex items-center gap-3"
+          >
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-accent/50 shadow-glow sm:h-16 sm:w-16">
+              <Image
+                src={profile.photo}
+                alt="Manjari Kamley"
+                fill
+                sizes="64px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <p className="font-mono text-sm text-ink sm:text-base">
+              Hi, I&apos;m <span className="text-gradient font-semibold">Manjari</span> 👋
+            </p>
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -98,7 +120,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="mt-9 flex flex-wrap gap-4"
           >
-            <a
+            
               href={profile.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -107,7 +129,7 @@ export default function Hero() {
             >
               Download Résumé
             </a>
-            <a
+            
               href="#contact"
               data-cursor-hover
               className="rounded-full border border-border px-7 py-3 font-mono text-sm uppercase tracking-widest text-ink transition-colors hover:border-cyan hover:text-cyan"
@@ -136,13 +158,14 @@ export default function Hero() {
           </motion.div>
         </div>
 
+        {/* Large circular photo card — desktop only, sits beside the text */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative mx-auto block"
+          className="relative mx-auto hidden md:block"
         >
-          <div className="relative h-56 w-56 animate-floaty sm:h-64 sm:w-64 md:h-80 md:w-80">
+          <div className="relative h-80 w-80 animate-floaty">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent to-cyan opacity-60 blur-2xl" />
             <div className="glass relative h-full w-full overflow-hidden rounded-full border-2 border-accent/40 p-2">
               <Image
