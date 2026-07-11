@@ -120,7 +120,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="mt-9 flex flex-wrap gap-4"
           >
-            
+            <a
               href={profile.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -129,7 +129,7 @@ export default function Hero() {
             >
               Download Résumé
             </a>
-            
+            <a
               href="#contact"
               data-cursor-hover
               className="rounded-full border border-border px-7 py-3 font-mono text-sm uppercase tracking-widest text-ink transition-colors hover:border-cyan hover:text-cyan"
