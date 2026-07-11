@@ -1,6 +1,6 @@
 export const profile = {
   name: "Manjari Kamley",
-  role: "Software Engineer — Full-Stack · Data & AI/ML · Cloud & DevOps",
+  role: "Software Engineer — Full-Stack · Data & AI/ML · Cloud & DevOps · Data Analytics ",
   tagline:
     "Final-year BSC CS undergraduate who builds across the stack — React/Next.js interfaces, Python-based ML models, graph analytics, and containerized deployments.",
   location: "Tarakeswar, Kolkata, West Bengal, India",
@@ -14,7 +14,7 @@ export const profile = {
 
 export const stats = [
   { label: "Projects Shipped", value: 6, suffix: "+" },
-  { label: "Hackathons", value: 3, suffix: "+" },
+  { label: "Hackathons", value: 3, suffix: "" },
   { label: "CGPA", value: 7.95, suffix: "/10" },
   { label: "Certifications", value: 5, suffix: "" },
 ];
@@ -53,8 +53,7 @@ export const projects: Project[] = [
       "Deployed a live full-stack demo integrating graph analytics with a web dashboard for transaction monitoring.",
     ],
     hackathon: "🏆 Devcation Hack 'N' Solve 2026 — IIT Delhi",
-    github: "https://github.com/Manjari-2005/LedgerShield",
-    demo: "https://ledgershield-digital-cctv.onrender.com/",
+    github: "https://github.com/Manjari-2005/Ledgershield-Digital-cctv",
     featured: true,
   },
   {
@@ -70,8 +69,7 @@ export const projects: Project[] = [
       "Engineered a Flask backend with FFmpeg-based audio processing and a TypeScript/React front end, deployed live on Vercel.",
     ],
     hackathon: "🏆 HackIndia Spark 6 — NIT Delhi",
-    github: "https://github.com/Manjari-2005/VoiceIQ",
-    demo: "https://voice-ai-beta-ten.vercel.app/",
+    github: "https://github.com/Manjari-2005/VoiceAI",
     featured: true,
   },
   {
@@ -117,22 +115,34 @@ export const projects: Project[] = [
       "Modeled demand elasticity with Pandas to simulate pricing strategies and estimate revenue impact.",
       "Built dynamic SQL queries for live data retrieval and an interactive Streamlit dashboard for exploratory analysis.",
     ],
-    github: "https://github.com/Manjari-2005",
+    github: "https://github.com/Manjari-2005/Revenue-Optimization-Engine",
     demo: "https://revenue-optimization-engine-kynwq2pzgb2zhvfd42qtmh.streamlit.app/",
   },
   {
-    slug: "spam-churn",
-    title: "Spam Classifier & Churn Prediction",
-    subtitle: "Two end-to-end ML classification systems",
+    slug: "spam-classifier",
+    title: "Spam Email Classifier",
+    subtitle: "SVM + Naive Bayes consensus model",
     description:
-      "Built during the Codec Technologies internship: a spam email classifier (SVM + Naive Bayes consensus model) and a customer churn predictor (Random Forest), each with its own Flask API and React dashboard.",
+      "Built during the Codec Technologies internship: a spam email classifier combining SVM and Naive Bayes as a consensus model, exposed via a Flask REST API with a React front end.",
     domains: ["AI/ML", "Data Analytics"],
     tech: ["Python", "scikit-learn", "Pandas", "Flask", "React"],
     bullets: [
-      "Spam classifier: SVM + Naive Bayes consensus model exposed via a Flask REST API and React front end.",
-      "Churn predictor: Random Forest model with an interactive React dashboard for business-facing insights.",
+      "SVM + Naive Bayes consensus model exposed via a Flask REST API and React front end.",
     ],
-    github: "https://github.com/Manjari-2005",
+    github: "https://github.com/Manjari-2005/Spam-Email-Classifier",
+  },
+  {
+    slug: "churn-prediction",
+    title: "Customer Churn Prediction",
+    subtitle: "Random Forest churn predictor",
+    description:
+      "Built during the Codec Technologies internship: a customer churn predictor using a Random Forest model, with an interactive React dashboard for business-facing insights.",
+    domains: ["AI/ML", "Data Analytics"],
+    tech: ["Python", "scikit-learn", "Pandas", "Flask", "React"],
+    bullets: [
+      "Random Forest model with an interactive React dashboard for business-facing insights.",
+    ],
+    github: "https://github.com/Manjari-2005/Customer-Churn-Prediction",
   },
 ];
 
@@ -208,6 +218,12 @@ export const certifications = [
     org: "Google Cloud / Simplilearn",
     date: "Apr 2025",
     note: "Certificate code: 8147269",
+  },
+  {
+    title: "AI for Entrepreneurship",
+    org: "Intel Technology India / Skill India Digital Hub",
+    date: "Mar 2025",
+    note: "",
   },
   {
     title: "AI Progression — AI for Future Workforce",

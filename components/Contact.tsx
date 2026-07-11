@@ -10,10 +10,12 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xykrgean";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorDetail, setErrorDetail] = useState<string>("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
+    setErrorDetail("");
     const form = e.currentTarget;
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -25,9 +27,27 @@ export default function Contact() {
         setStatus("sent");
         form.reset();
       } else {
+        // Formspree returns a JSON body describing exactly what went wrong
+        // (e.g. "form not found", "not confirmed yet"). Surface it instead
+        // of a generic message — it's the fastest way to see the real cause.
+        let detail = `Request failed (${res.status})`;
+        try {
+          const data = await res.json();
+          if (data?.errors?.length) {
+            detail = data.errors
+              .map((er: { message: string }) => er.message)
+              .join(", ");
+          }
+        } catch {
+          // response wasn't JSON — keep the generic status message
+        }
+        setErrorDetail(detail);
         setStatus("error");
       }
-    } catch {
+    } catch (err) {
+      setErrorDetail(
+        err instanceof Error ? err.message : "Network error — request never reached Formspree"
+      );
       setStatus("error");
     }
   };
@@ -136,7 +156,8 @@ export default function Contact() {
           </button>
           {status === "error" && (
             <p className="text-center text-xs text-red-400">
-              Something went wrong. Please email me directly at {profile.email}.
+              {errorDetail || "Something went wrong."} — please email me directly at{" "}
+              {profile.email}.
             </p>
           )}
         </motion.form>

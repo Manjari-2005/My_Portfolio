@@ -10,7 +10,7 @@ const HeroScene = dynamic(() => import("@/components/3d/HeroScene"), {
   ssr: false,
 });
 
-const ROLES = ["Software Developer", "DevOps Enthusiast", "AI Explorer", "Data Analyst"];
+const ROLES = ["Software Developer", "DevOps Enthusiast", "AI Explorer"];
 
 function useTypewriter(words: string[], speed = 65, pause = 1400) {
   const [text, setText] = useState("");
@@ -59,7 +59,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="eyebrow mb-5"
           >
-            open to sde - full-stack - ai/ml internships
+            open to sde · full-stack · ai/ml internships
           </motion.p>
 
           <motion.h1
@@ -68,11 +68,9 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-5xl font-bold leading-[1.05] text-ink sm:text-6xl lg:text-7xl"
           >
-            Building Scalable Software &amp;
+            Building Scalable
             <br />
-            <span className="text-gradient whitespace-nowrap">AI-Driven</span>
-            <br />
-            Solutions
+            Software &amp; <span className="text-gradient">DevOps</span> Solutions
           </motion.h1>
 
           <motion.div
@@ -107,7 +105,7 @@ export default function Hero() {
               data-cursor-hover
               className="rounded-full bg-accent px-7 py-3 font-mono text-sm uppercase tracking-widest text-white shadow-glow transition-transform hover:-translate-y-0.5"
             >
-              Download Resume
+              Download Résumé
             </a>
             <a
               href="#contact"
@@ -142,9 +140,9 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative mx-auto hidden md:block"
+          className="relative mx-auto block"
         >
-          <div className="relative h-80 w-80 animate-floaty">
+          <div className="relative h-56 w-56 animate-floaty sm:h-64 sm:w-64 md:h-80 md:w-80">
             <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-accent to-cyan opacity-60 blur-2xl" />
             <div className="glass relative h-full w-full overflow-hidden rounded-[2.5rem] border-2 border-accent/40 p-2">
               <Image
@@ -152,7 +150,7 @@ export default function Hero() {
                 alt="Manjari Kamley"
                 fill
                 sizes="320px"
-                className="rounded-[2rem] object-cover object-[center_20%]"
+                className="rounded-[2rem] object-cover"
                 priority
               />
             </div>
@@ -170,7 +168,7 @@ export default function Hero() {
         transition={{ delay: 1.3 }}
         className="absolute bottom-8 font-mono text-[0.65rem] uppercase tracking-[0.3em] text-muted"
       >
-        scroll down
+        scroll ↓
       </motion.div>
     </section>
   );
