@@ -12,6 +12,7 @@ import Education from "@/components/Education";
 import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import JerryGuide from "@/components/JerryGuide";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       <Achievements />
       <Contact />
       <Footer />
+      <JerryGuide />
     </main>
   );
 }
