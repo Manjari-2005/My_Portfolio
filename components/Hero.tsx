@@ -143,14 +143,14 @@ export default function Hero() {
           className="relative mx-auto block"
         >
           <div className="relative h-56 w-56 animate-floaty sm:h-64 sm:w-64 md:h-80 md:w-80">
-            <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-accent to-cyan opacity-60 blur-2xl" />
-            <div className="glass relative h-full w-full overflow-hidden rounded-[2.5rem] border-2 border-accent/40 p-2">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent to-cyan opacity-60 blur-2xl" />
+            <div className="glass relative h-full w-full overflow-hidden rounded-full border-2 border-accent/40 p-2">
               <Image
                 src={profile.photo}
                 alt="Manjari Kamley"
                 fill
                 sizes="320px"
-                className="rounded-[2rem] object-cover"
+                className="rounded-full object-cover"
                 priority
               />
             </div>
