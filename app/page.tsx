@@ -12,7 +12,7 @@ import Education from "@/components/Education";
 import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import JerryGuide from "@/components/JerryGuide";
+import JerryGuide from "@/components/jerryguide";
 
 export default function Home() {
   return (
