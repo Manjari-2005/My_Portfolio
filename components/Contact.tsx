@@ -29,14 +29,14 @@ export default function Contact() {
         viewport={{ once: true }}
         className="mt-12 grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-2"
       >
-        
+        <a
           href={"mailto:" + profile.email}
           data-cursor-hover
           className="glass flex items-center gap-3 rounded-xl p-4 text-ink transition-colors hover:border-accent/60 sm:col-span-2"
         >
           <Mail className="h-5 w-5 shrink-0 text-accent2" /> {profile.email}
         </a>
-        
+        <a
           href={profile.github}
           target="_blank"
           rel="noopener noreferrer"
@@ -45,7 +45,7 @@ export default function Contact() {
         >
           <Github className="h-5 w-5 shrink-0 text-accent2" /> GitHub
         </a>
-        
+        <a
           href={profile.linkedin}
           target="_blank"
           rel="noopener noreferrer"
